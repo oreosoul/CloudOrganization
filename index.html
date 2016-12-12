@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/banner.css"/>
+    <title>欢迎来到社团云</title>
+</head>
+<body>
+	<div class="blackBg"></div>
+	<div class="menuBox">
+		<div class="closeMenu">
+			<a id="closeBtn"><img width="100%" src="img/icons/close-o.png"/></a>
+		</div>
+		<div class="menuTitle">
+			<h2>社团云</h2>
+		</div>
+		<div class="menuList">
+			<ul>
+				<li><a class="here" href="#"><img src="img/icons/home-here.png" />首页</a></li>
+				<li><a href="circle.html"><img src="img/icons/circle-of-friends.png" />社团圈</a></li>
+				<li><a href="#"><img src="img/icons/alert.png" />社团通知</a></li>
+				<li><a href="newsList.html"><img src="img/icons/news.png" />社团新闻</a></li>
+				<li><a href="contacts.html"><img src="img/icons/contect.png" />通讯录</a></li>
+			</ul>
+		</div>
+	</div>
+	<header>
+			<div class="left headerBtn">
+				<a href="#"><img src="img/icons/magnifier-o.png"/></a>
+			</div>
+			<!--<div class="searchBox">
+				<input type="text" name="" id="" value="" />
+			</div>-->
+			<div class="right headerBtn">
+				<a id="menuBtn" href="#"><img src="img/icons/list-o.png"/></a>
+			</div>
+		</header>
+	<div class="container">
+		<div class="banner">
+			<section class="sample slider--animated" data-slidizle data-slidizle-timeout="2000" data-slidizle-loop="true" data-slidizle-pause-on-hover="true">
+				<ul class="slider-content" data-slidizle-content>	
+					<!--轮播图直接添加li标签即可-->
+					<li class="slider-item" style="background-image:url('img/01.jpg')">
+					</li>
+					<li class="slider-item" style="background-image:url('img/1.jpg')">
+					</li>
+					<li class="slider-item" style="background-image:url('img/coffe.jpg')">
+					</li>
+					<li class="slider-item" style="background-image:url('img/work01.jpg')">
+					</li>
+				</ul>
+			</section>
+		</div>
+		<div class="cateBtn">
+			<ul>
+				<li><a href="#"><img src="img/icons/cloud.png"/><br />社团云 </a></li>
+				<li><a href="#"><img src="img/icons/mail.png"/><br />我的消息 </a></li>
+				<li><a href="contacts.html"><img src="img/icons/notebook.png"/><br />通讯录 </a></li>
+				<li><a href="circle.html"><img src="img/icons/target.png"/><br />社团圈 </a></li>
+			</ul>
+		</div>
+		<div class="infoCloud">
+			<div class="infoBox" >
+				<h2><img src="img/icons/cloud02.png"/> 动态</h2>
+				<div class="scrollBox" id="scrollBox">
+					<ul id="cloudInfo">
+						<li><a><p>1.热烈庆祝 XX协会成立！热烈庆祝 XX协会成立！</p></a></li>
+						<li><a><p>2.这是一条新的云动态了</p></a></li>
+						<li><a><p>3.热烈庆祝 XX协会成立！热烈庆祝 XX协会成立！我是云动态！我是云动态！</p></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="moduleBox">
+			<div class="moduleTitle">
+				<h2><a href="newsList.html">社团新闻</a></h2>
+				<a href="newsList.html" class="more">MORE+</a>
+			</div>
+			<div class="moduleShowBox">
+				<div class="moduleShow1" style="background-image:url('img/coffe.jpg');background-size: cover;">
+					<a href="newsDetail.html" class="black1">
+						<h3>暑假登山活动</h3>
+					</a>
+				</div>
+				<div class="moduleShow1" style="background-image:url('img/coffe.jpg');background-size: cover;">
+					<a href="newsVote.html" class="black1">
+						<h3>国庆出游活动投票</h3>
+					</a>
+				</div>
+			</div>
+			
+		</div>
+		<div class="moduleBox">
+			<div class="moduleTitle">
+				<h2><a href="#">自定义标题</a></h2>
+				<a href="#" class="more">MORE+</a>
+			</div>
+			<div class="moduleShowBox">
+				<div class="moduleShow2" style="background-image:url('img/coffe.jpg');background-size: cover;">
+					<a href="#" class="black2">
+						<h3>暑假登山活动</h3>
+					</a>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</body>
+<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.slidizle.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/scrollCloud.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	jQuery(function($) {       
+				//滚动banner
+				// setup slidizle
+				$('[data-slidizle]').slidizle({
+					beforeChange: function(api) {
+						console.log('previous', api.getPreviousSlide().index());
+						console.log('current', api.getCurrentSlide().index());
+						console.log('next', api.getNextSlide().index());
+						console.log('previous active', api.getPreviousActiveSlide().index());
+					}
+				});
+		});
+		
+	$(document).ready(function(){
+	  $("#closeBtn").click(function(){
+		$(".menuBox").animate({left:"-290px"});
+		$(".blackBg").fadeOut();
+	  });
+	  $("#menuBtn").click(function(){
+		$(".menuBox").animate({left:"0px"});
+		$(".blackBg").fadeIn();
+	  });
+	  $(".blackBg").click(function(){
+	  	$(".menuBox").animate({left:"-290px"});
+		$(".blackBg").fadeOut();
+	  });
+	});
+</script>
+</html>

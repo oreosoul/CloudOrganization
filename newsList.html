@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/banner.css"/>
+    <title>欢迎来到社团云</title>
+</head>
+<body>
+	<div class="blackBg"></div>
+	<div class="menuBox">
+		<div class="closeMenu">
+			<a id="closeBtn"><img width="100%" src="img/icons/close-o.png"/></a>
+		</div>
+		<div class="menuTitle">
+			<h2>社团云</h2>
+		</div>
+		<div class="menuList">
+			<ul>
+				<li><a href="index.html"><img src="img/icons/home.png" />首页</a></li>
+				<li><a href="circle.html"><img src="img/icons/circle-of-friends.png" />社团圈</a></li>
+				<li><a href="#"><img src="img/icons/alert.png" />社团通知</a></li>
+				<li><a class="here" href="#"><img src="img/icons/news-here.png" />社团新闻</a></li>
+				<li><a href="contacts.html"><img src="img/icons/contect.png" />通讯录</a></li>
+			</ul>
+		</div>
+	</div>
+	<header>
+		<div class="left headerBtn">
+			<a href="#" onClick="javascript :history.go(-1);"><img src="img/icons/back.png"/></a>
+		</div>
+		<div class="left headerBtn">
+			<a href="#"><img src="img/icons/magnifier-o.png"/></a>
+		</div>
+		<div class="right headerBtn">
+			<a id="menuBtn" href="#"><img src="img/icons/list-o.png"/></a>
+		</div>
+		</header>
+	<div class="container">
+		<div class="newsListBox">
+			<div class="ListTitle">
+				<h2>社团新闻</h2>
+				<h2 class="engTitle"><span>NEWS</span></h2>
+			</div>
+				<div class="moduleShow2 newsShow" style="background-image:url('img/coffe.jpg');background-size: cover;">
+					<div class="newsTitleBox">
+						<div class="newsTitle">
+							<a href="newsDetail.html">[新闻] 暑假登山活动</a>
+						</div>
+						<div class="newsInfoBox">
+							<div class="newsDate">
+								2016/06/25
+							</div>
+							<div class="newsInfo">
+								<img width="22px" src="img/icons/favor-white.png"/>134
+							</div>
+							<div class="newsInfo">
+								<img width="22px" src="img/icons/seen-white.png"/>1222
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="moduleShow2 newsShow" style="background-image:url('img/coffe.jpg');background-size: cover;">
+					<div class="newsTitleBox">
+						<div class="newsTitle">
+							<a href="newsVote.html">[投票] 国庆出游活动地点投票</a>
+						</div>
+						<div class="newsInfoBox">
+							<div class="newsDate">
+								2016/06/25
+							</div>
+							<div class="newsInfo">
+								<img width="22px" src="img/icons/favor-white.png"/>134
+							</div>
+							<div class="newsInfo">
+								<img width="22px" src="img/icons/seen-white.png"/>1222
+							</div>
+						</div>
+					</div>
+				</div><div class="moduleShow2 newsShow" style="background-image:url('img/coffe.jpg');background-size: cover;">
+					<div class="newsTitleBox">
+						<div class="newsTitle">
+							<a href="#" >[新闻] 我是标题我是标题我是标题我是标题我是标题</a>
+						</div>
+						<div class="newsInfoBox">
+							<div class="newsDate">
+								2016/06/25
+							</div>
+							<div class="newsInfo">
+								<img width="22px" src="img/icons/favor-white.png"/>134
+							</div>
+							<div class="newsInfo">
+								<img width="22px" src="img/icons/seen-white.png"/>1222
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+		
+	$(document).ready(function(){
+	  $("#closeBtn").click(function(){
+		$(".menuBox").animate({left:"-290px"});
+		$(".blackBg").fadeOut();
+	  });
+	  $("#menuBtn").click(function(){
+		$(".menuBox").animate({left:"0px"});
+		$(".blackBg").fadeIn();
+	  });
+	  $(".blackBg").click(function(){
+	  	$(".menuBox").animate({left:"-290px"});
+		$(".blackBg").fadeOut();
+	  });
+	});
+</script>
+</html>

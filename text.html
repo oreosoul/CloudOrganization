@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+			#scrollBox{
+				width: 1200px;
+				height: 350px;
+				background-color: #333;
+				overflow: hidden;
+			}
+			#scrollBox ul{	
+				width: 2900px;
+				height: 290px;
+				margin: 30px;
+			}
+			#scrollBox ul:first-child{
+				margin-left: 0;
+			}
+			#scrollBox ul li{
+				list-style: none;
+				background-color: red;
+				height: 290px;
+				width: 250px;
+				text-align: center;
+				float: left;
+				color: #ccc;
+				margin-left: 40px;
+			}
+			.demo--label{margin:20px 20px 0 0;display:inline-block}
+.demo--radio{display:none}
+.demo--radioInput{background-color:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:100%;display:inline-block;height:16px;margin-right:10px;margin-top:-1px;vertical-align:middle;width:16px;line-height:1}
+.demo--radio:checked + .demo--radioInput:after{background-color:#17D2D9;border-radius:100%;content:"";display:inline-block;height:12px;margin:2px;width:12px}
+.demo--checkbox.demo--radioInput,.demo--radio:checked + .demo--checkbox.demo--radioInput:after{border-radius:0}
+		</style>
+	</head>
+	<body>
+		<div onclick="startMoveL()" id="">
+			<
+		</div>
+		<div onclick="startMoveR()" id="">
+			>
+		</div>
+		<div id="scrollBox">
+			<ul id="scrollUl">
+				<li>1111111</li>
+				<li>22222</li>
+				<li>33333</li>
+				<li>44444</li>
+				<li>55555</li>
+			</ul>
+		</div>
+		<div>
+    <label class="demo--label">
+        <input class="demo--radio" type="radio" name="demo-radio">
+        <span class="demo--radioInput"></span>约
+    </label>
+</div>
+<div>
+    
+    <label class="demo--label"><input class="demo--radio" type="checkbox" name="demo-checkbox1">
+        <span class="demo--checkbox demo--radioInput"></span>苍井空
+    </label>
+</div>
+CSS样式
+		
+	</body>
+	
+	<script type="text/javascript">
+		var area = document.getElementById("scrollBox");
+		var list = document.getElementById("scrollUl");
+		list.innerHTML += list.innerHTML;
+		var liHeaight  = 290;
+		area.scrollLeft = 0;
+		var time;
+		var speed = 10;
+		function startMoveL(){
+			area.scrollLeft++;
+			time = setInterval("scrollL()",speed);
+		}
+		function scrollL(){
+			if(area.scrollLeft % liHeaight ==0){
+				clearInterval(time);
+			}else{
+				area.scrollLeft++;
+				if(area.scrollLeft >= area.scrollWidth/2){
+					area.scrollLeft = 0;
+				}
+			}
+		}
+		function startMoveR(){
+			area.scrollLeft--;
+			time = setInterval("scrollR()",speed);
+		}
+		function scrollR(){
+			if(area.scrollLeft % liHeaight ==0){
+				clearInterval(time);
+			}else{
+				area.scrollLeft--;
+				if(area.scrollLeft >= area.scrollWidth/2){
+					area.scrollLeft = 0;
+				}
+			}
+		}
+	</script>
+</html>
